@@ -1,13 +1,5 @@
 [
     {
-        "id": "2db21dda1c816895",
-        "type": "tab",
-        "label": "Flow 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "837c501a.a949b",
         "type": "tab",
         "label": "Simulações",
@@ -72,6 +64,29 @@
                 "wires": [
                     {
                         "id": "fbe844b3789b86c4",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "2e07375f829b5889",
+        "type": "subflow",
+        "name": "Formulario_custom",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [
+            {
+                "x": 880,
+                "y": 860,
+                "wires": [
+                    {
+                        "id": "641f410934025ce6",
                         "port": 0
                     }
                 ]
@@ -255,7 +270,7 @@
         "type": "ui_group",
         "name": "Opções",
         "tab": "2c846429931e3a74",
-        "order": 5,
+        "order": 6,
         "disp": true,
         "width": "28",
         "collapse": false
@@ -294,7 +309,7 @@
         "type": "ui_group",
         "name": "Grafico 1",
         "tab": "2c846429931e3a74",
-        "order": 6,
+        "order": 7,
         "disp": true,
         "width": 28,
         "collapse": false
@@ -304,7 +319,7 @@
         "type": "ui_group",
         "name": "Grafico 3",
         "tab": "2c846429931e3a74",
-        "order": 8,
+        "order": 9,
         "disp": true,
         "width": 28,
         "collapse": false
@@ -314,7 +329,7 @@
         "type": "ui_group",
         "name": "Grafico 2",
         "tab": "2c846429931e3a74",
-        "order": 7,
+        "order": 8,
         "disp": true,
         "width": 28,
         "collapse": false
@@ -324,7 +339,7 @@
         "type": "ui_group",
         "name": "Grafico 4",
         "tab": "2c846429931e3a74",
-        "order": 9,
+        "order": 10,
         "disp": true,
         "width": 28,
         "collapse": false
@@ -412,9 +427,21 @@
         "className": ""
     },
     {
-        "id": "f37fa608fd107619",
+        "id": "ba1bb8aad4f302b4",
+        "type": "ui_group",
+        "z": "2e07375f829b5889",
+        "name": "Parâmetros_Custom",
+        "tab": "2c846429931e3a74",
+        "order": 5,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1612cbebba4ec9c1",
         "type": "ui_spacer",
-        "z": "837c501a.a949b",
+        "z": "2e07375f829b5889",
         "name": "spacer",
         "group": "fd1a3764804ee452",
         "order": 1,
@@ -2254,6 +2281,735 @@
         ]
     },
     {
+        "id": "e7c3b6d08da1d7e2",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Passo de simulação",
+        "tooltip": "Define o passo de simulação ",
+        "group": "ba1bb8aad4f302b4",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 820,
+        "y": 200,
+        "wires": [
+            [
+                "64a251189de5633a"
+            ]
+        ]
+    },
+    {
+        "id": "13c754ffd61b053e",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Tempo de simulação",
+        "tooltip": "Define o tempo de simulação",
+        "group": "ba1bb8aad4f302b4",
+        "order": 3,
+        "width": 5,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 820,
+        "y": 240,
+        "wires": [
+            [
+                "cb1a409161ee29c0"
+            ]
+        ]
+    },
+    {
+        "id": "89b616c3bd8a35f6",
+        "type": "ui_text",
+        "z": "2e07375f829b5889",
+        "group": "ba1bb8aad4f302b4",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Parametros de simulação",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 830,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "a1558a731828f22a",
+        "type": "ui_text",
+        "z": "2e07375f829b5889",
+        "group": "ba1bb8aad4f302b4",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Valores desejados",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 810,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "4d3f4694552ceb91",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Angulo",
+        "tooltip": "Valor desejado para o angulo",
+        "group": "ba1bb8aad4f302b4",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 780,
+        "y": 320,
+        "wires": [
+            [
+                "e2b1abac3e13ba84"
+            ]
+        ]
+    },
+    {
+        "id": "801ee31b57ba7f85",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Velocidade angular",
+        "tooltip": "valor deseajdo para a velocidade angular",
+        "group": "ba1bb8aad4f302b4",
+        "order": 11,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 810,
+        "y": 360,
+        "wires": [
+            [
+                "6e2fc02c135db036"
+            ]
+        ]
+    },
+    {
+        "id": "362298a55fdc8a80",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Aceleração angular",
+        "tooltip": "Valor desejado para a acleração angular",
+        "group": "ba1bb8aad4f302b4",
+        "order": 12,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 810,
+        "y": 400,
+        "wires": [
+            [
+                "d8b47b435d8a91b7"
+            ]
+        ]
+    },
+    {
+        "id": "e44c66fe2bd9645e",
+        "type": "ui_text",
+        "z": "2e07375f829b5889",
+        "group": "ba1bb8aad4f302b4",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Valores iniciais",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 800,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "89bc88c06c673c90",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Angulo",
+        "tooltip": "Valor inicial para o angulo",
+        "group": "ba1bb8aad4f302b4",
+        "order": 10,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 780,
+        "y": 480,
+        "wires": [
+            [
+                "6ebc3ea5891e59b5"
+            ]
+        ]
+    },
+    {
+        "id": "ced8c411452825cf",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Velocidade angular",
+        "tooltip": "valor inicial para a velocidade angular",
+        "group": "ba1bb8aad4f302b4",
+        "order": 7,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 810,
+        "y": 520,
+        "wires": [
+            [
+                "6f7a80c7280e2984"
+            ]
+        ]
+    },
+    {
+        "id": "918136bdf7ea707f",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Aceleração angular",
+        "tooltip": "Valor inicial para a aceleração angular",
+        "group": "ba1bb8aad4f302b4",
+        "order": 8,
+        "width": 3,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 810,
+        "y": 560,
+        "wires": [
+            [
+                "208f38a1460cb833"
+            ]
+        ]
+    },
+    {
+        "id": "64a251189de5633a",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.parametros_simulacao.passo =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb1a409161ee29c0",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.parametros_simulacao.tempo =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2b1abac3e13ba84",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.setpoint.angulo =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e2fc02c135db036",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.setpoint.velocidade_angular =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d8b47b435d8a91b7",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.setpoint.aceleracao_angular =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ebc3ea5891e59b5",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.estados_iniciais.angulo =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f7a80c7280e2984",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.estados_iniciais.velocidade_angular =  parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "208f38a1460cb833",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.estados_iniciais.aceleracao_angular = parseFloat(msg.payload)\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2925585af23e9269",
+        "type": "ui_button",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "group": "ba1bb8aad4f302b4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Preenchimento automático",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"parametros_simulacao\":{\"tempo\":30,\"passo\":0.01},\"setpoint\":{\"angulo\":0,\"velocidade_angular\":0,\"aceleracao_angular\":0},\"estados_iniciais\":{\"angulo\":-0.78,\"velocidade_angular\":0,\"aceleracao_angular\":0}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 220,
+        "y": 440,
+        "wires": [
+            [
+                "cda5d006d941afea",
+                "77b57bc48dffd564",
+                "a530051fbcb9dd7a",
+                "8f199267bac38e91",
+                "d0a4d50f1d2a402b",
+                "8ac0a5a3acda541e",
+                "53123b81b550319e",
+                "cce7a06071c6b356"
+            ]
+        ]
+    },
+    {
+        "id": "cda5d006d941afea",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.parametros_simulacao.passo};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 200,
+        "wires": [
+            [
+                "e7c3b6d08da1d7e2"
+            ]
+        ]
+    },
+    {
+        "id": "77b57bc48dffd564",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.parametros_simulacao.tempo};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 240,
+        "wires": [
+            [
+                "13c754ffd61b053e"
+            ]
+        ]
+    },
+    {
+        "id": "a530051fbcb9dd7a",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.setpoint.angulo};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 320,
+        "wires": [
+            [
+                "4d3f4694552ceb91"
+            ]
+        ]
+    },
+    {
+        "id": "8f199267bac38e91",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.setpoint.velocidade_angular};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "801ee31b57ba7f85"
+            ]
+        ]
+    },
+    {
+        "id": "d0a4d50f1d2a402b",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.setpoint.aceleracao_angular};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 400,
+        "wires": [
+            [
+                "362298a55fdc8a80"
+            ]
+        ]
+    },
+    {
+        "id": "8ac0a5a3acda541e",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.estados_iniciais.angulo};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 480,
+        "wires": [
+            [
+                "89bc88c06c673c90"
+            ]
+        ]
+    },
+    {
+        "id": "53123b81b550319e",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.estados_iniciais.velocidade_angular};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 520,
+        "wires": [
+            [
+                "ced8c411452825cf"
+            ]
+        ]
+    },
+    {
+        "id": "cce7a06071c6b356",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "return {payload: msg.payload.estados_iniciais.aceleracao_angular};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 560,
+        "wires": [
+            [
+                "918136bdf7ea707f"
+            ]
+        ]
+    },
+    {
+        "id": "e9a93a04db5bec54",
+        "type": "ui_button",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "group": "ba1bb8aad4f302b4",
+        "order": 16,
+        "width": 4,
+        "height": 1,
+        "passthru": false,
+        "label": "Limpar",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"parametros_simulacao\":{\"tempo\":null,\"passo\":null},\"parametros_sistema\":{\"gravidade\":null,\"massa_motor\":null,\"massa_contrapeso\":null,\"massa_haste\":null,\"comprimento_haste\":null},\"hiper_parametros\":{\"lambda\":null},\"setpoint\":{\"angulo\":null,\"velocidade_angular\":null,\"aceleracao_angular\":null},\"estados_iniciais\":{\"angulo\":null,\"velocidade_angular\":null,\"aceleracao_angular\":null},\"simulacao_incertezas\":{\"massa_motor\":null,\"massa_contrapeso\":null,\"comprimento_haste\":null}}",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 290,
+        "y": 500,
+        "wires": [
+            [
+                "cda5d006d941afea",
+                "77b57bc48dffd564",
+                "a530051fbcb9dd7a",
+                "8f199267bac38e91",
+                "d0a4d50f1d2a402b",
+                "8ac0a5a3acda541e",
+                "53123b81b550319e",
+                "cce7a06071c6b356",
+                "9a6a564746ab8a81"
+            ]
+        ]
+    },
+    {
+        "id": "78419edc6908837f",
+        "type": "ui_button",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "group": "ba1bb8aad4f302b4",
+        "order": 15,
+        "width": 5,
+        "height": 1,
+        "passthru": false,
+        "label": "Simular",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "input_data_custom",
+        "payloadType": "global",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 860,
+        "wires": [
+            [
+                "641f410934025ce6"
+            ]
+        ]
+    },
+    {
+        "id": "641f410934025ce6",
+        "type": "delay",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "300",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 650,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfe965e07a4de472",
+        "type": "ui_text",
+        "z": "2e07375f829b5889",
+        "group": "ba1bb8aad4f302b4",
+        "order": 13,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Lei de controle",
+        "format": "",
+        "layout": "row-spread",
+        "className": "",
+        "x": 800,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "9a6a564746ab8a81",
+        "type": "ui_text_input",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "label": "Lei de controle",
+        "tooltip": "",
+        "group": "ba1bb8aad4f302b4",
+        "order": 14,
+        "width": 9,
+        "height": 1,
+        "passthru": true,
+        "mode": "text",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 800,
+        "y": 640,
+        "wires": [
+            [
+                "a42bc236e81a6238"
+            ]
+        ]
+    },
+    {
+        "id": "a42bc236e81a6238",
+        "type": "function",
+        "z": "2e07375f829b5889",
+        "name": "",
+        "func": "let input_data_custom = global.get(\"input_data_custom\")\ninput_data_custom.lei_de_controle = msg.payload\n\nreturn {payload: input_data_custom};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
         "id": "b558027d.e4179",
         "type": "ui_chart",
         "z": "837c501a.a949b",
@@ -2742,12 +3498,11 @@
         "z": "837c501a.a949b",
         "name": "",
         "env": [],
-        "x": 200,
+        "x": 180,
         "y": 460,
         "wires": [
             [
-                "8a9afa8f.bf22a8",
-                "977680268c952b22"
+                "8a9afa8f.bf22a8"
             ]
         ]
     },
@@ -2772,8 +3527,8 @@
         "wires": [
             [
                 "c34c26b1.8bf398",
-                "9c86f37d.2c191",
-                "9b99d64767ce935d"
+                "9b99d64767ce935d",
+                "c2ad70e0be1248b0"
             ]
         ]
     },
@@ -2782,7 +3537,7 @@
         "type": "function",
         "z": "837c501a.a949b",
         "name": "set input_data",
-        "func": "let input_data = {\"parametros_simulacao\":{\n\t\"tempo\": \"\",\n\t\"passo\": \"\"\n\t},\n\"hiper_parametros\":{\n\t\"lambda\":\"\"\n\t},\n\"setpoint\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"estados_iniciais\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"simulacao_incertezas\":{\n\t\"massa_motor\": \"\",\n\t\"massa_haste\": \"\",\n\t\"comprimento_haste\": \"\"\n\t}\n}\nglobal.set(\"input_data\",input_data)\nreturn {payload:input_data};",
+        "func": "let input_data = {\"parametros_simulacao\":{\n\t\"tempo\": \"\",\n\t\"passo\": \"\"\n\t},\n\"hiper_parametros\":{\n\t\"lambda\":\"\"\n\t},\n\"setpoint\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"estados_iniciais\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"simulacao_incertezas\":{\n\t\"massa_motor\": \"\",\n\t\"massa_haste\": \"\",\n\t\"comprimento_haste\": \"\"\n\t}\n}\nglobal.set(\"input_data\",input_data)\n\n\n\n\nlet input_data_pid = {\"parametros_simulacao\":{\n\t\"tempo\": \"\",\n\t\"passo\": \"\"\n\t},\n\"hiper_parametros\":{\n\t\"kp\":\"\",\n\t\"ki\":\"\",\n\t\"kd\":\"\"\n\t},\n\"setpoint\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"estados_iniciais\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"simulacao_incertezas\":{\n\t\"massa_motor\": \"\",\n\t\"massa_contrapeso\": \"\",\n\t\"comprimento_haste\": \"\"\n\t}\n}\nglobal.set(\"input_data_pid\",input_data_pid)\n\nlet input_data_custom = {\n    \"parametros_simulacao\": {\n        \"tempo\": \"\",\n        \"passo\": \"\"\n    },\n    \"setpoint\": {\n        \"angulo\": \"\",\n        \"velocidade_angular\": \"\",\n        \"aceleracao_angular\": \"\"\n    },\n    \"estados_iniciais\": {\n        \"angulo\": \"\",\n        \"velocidade_angular\": \"\",\n        \"aceleracao_angular\": \"\"\n    },\n    \"lei_de_controle\":\"\"\n}\n\nglobal.set(\"input_data_custom\",input_data_custom)\n\nreturn {payload:[input_data,input_data_pid,input_data_custom]};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2791,9 +3546,7 @@
         "x": 440,
         "y": 80,
         "wires": [
-            [
-                "d01236d41ec824e7"
-            ]
+            []
         ]
     },
     {
@@ -3141,6 +3894,7 @@
         "min": "1",
         "max": "4",
         "step": 1,
+        "className": "",
         "x": 320,
         "y": 1600,
         "wires": [
@@ -3160,7 +3914,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 530,
+        "x": 550,
         "y": 1600,
         "wires": [
             [
@@ -3315,28 +4069,11 @@
         ]
     },
     {
-        "id": "9c86f37d.2c191",
-        "type": "function",
-        "z": "837c501a.a949b",
-        "name": "set input_data_pid",
-        "func": "let input_data_pid = {\"parametros_simulacao\":{\n\t\"tempo\": \"\",\n\t\"passo\": \"\"\n\t},\n\"hiper_parametros\":{\n\t\"kp\":\"\",\n\t\"ki\":\"\",\n\t\"kd\":\"\"\n\t},\n\"setpoint\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"estados_iniciais\":{\n\t\"angulo\":\"\",\n\t\"velocidade_angular\": \"\",\n\t\"aceleracao_angular\": \"\"\n\t},\n\"simulacao_incertezas\":{\n\t\"massa_motor\": \"\",\n\t\"massa_contrapeso\": \"\",\n\t\"comprimento_haste\": \"\"\n\t}\n}\nglobal.set(\"input_data_pid\",input_data_pid)\nreturn {payload:input_data_pid};",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 450,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "5379c5f2.54141c",
         "type": "subflow:d56a392d.2f3db8",
         "z": "837c501a.a949b",
         "name": "",
-        "x": 200,
+        "x": 180,
         "y": 580,
         "wires": [
             [
@@ -3362,9 +4099,9 @@
         "z": "837c501a.a949b",
         "name": "ui_control",
         "links": [
-            "e4fcf2c0.f0444",
+            "16b54642efdf96f9",
             "dc3fac6335ae90c8",
-            "16b54642efdf96f9"
+            "e4fcf2c0.f0444"
         ],
         "x": 255,
         "y": 1840,
@@ -3400,11 +4137,6 @@
                 "type": "str"
             },
             {
-                "label": "Feedback linearization com compensador inteligente",
-                "value": "fbl_rbf",
-                "type": "str"
-            },
-            {
                 "label": "Controlador customizado",
                 "value": "custom",
                 "type": "str"
@@ -3418,8 +4150,7 @@
         "y": 1160,
         "wires": [
             [
-                "8504da063ba68e17",
-                "fd7901836f940a3a"
+                "8504da063ba68e17"
             ]
         ]
     },
@@ -3428,7 +4159,7 @@
         "type": "function",
         "z": "837c501a.a949b",
         "name": "seleciona tipo de simulação",
-        "func": "let hide = []\nlet show = []\n\nif(msg.payload==\"pid\"){\n    hide = [\"Simulações_Parâmetros_FBL\"]\n    show = [\"Simulações_Parâmetros_PID\"]\n}\n\nif(msg.payload==\"fbl\"){\n    hide = [\"Simulações_Parâmetros_PID\"]\n    show = [\"Simulações_Parâmetros_FBL\"]\n}\n\nreturn {payload:{\n        \"group\": {\n            \"hide\": hide,\n            \"show\": show\n        }\n    }\n};",
+        "func": "let hide = []\nlet show = []\n\nif(msg.payload==\"pid\"){\n    hide = [\"Simulações_Parâmetros_FBL\",\"Simulações_Parâmetros_Custom\"]\n    show = [\"Simulações_Parâmetros_PID\"]\n}\n\nif(msg.payload==\"fbl\"){\n    hide = [\"Simulações_Parâmetros_PID\",\"Simulações_Parâmetros_Custom\"]\n    show = [\"Simulações_Parâmetros_FBL\"]\n}\n\nif(msg.payload==\"custom\"){\n    hide = [\"Simulações_Parâmetros_PID\",\"Simulações_Parâmetros_FBL\"]\n    show = [\"Simulações_Parâmetros_Custom\"]\n}\n\nreturn {payload:{\n        \"group\": {\n            \"hide\": hide,\n            \"show\": show\n        }\n    }\n};",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -3438,8 +4169,7 @@
         "y": 1160,
         "wires": [
             [
-                "dc3fac6335ae90c8",
-                "fd7901836f940a3a"
+                "dc3fac6335ae90c8"
             ]
         ]
     },
@@ -3461,7 +4191,7 @@
         "type": "function",
         "z": "837c501a.a949b",
         "name": "seleciona tipo de simulação",
-        "func": "let hide = [\"Simulações_Parâmetros_PID\"]\nlet show = [\"Simulações_Parâmetros_FBL\"]\n\nreturn [{payload:{\n        \"group\": {\n            \"hide\": hide,\n            \"show\": show\n        }\n    }\n},\n{payload: \"fbl\"}\n]",
+        "func": "let hide = [\"Simulações_Parâmetros_PID\", \"Simulações_Parâmetros_Custom\"]\nlet show = [\"Simulações_Parâmetros_FBL\"]\n\nreturn [{payload:{\n        \"group\": {\n            \"hide\": hide,\n            \"show\": show\n        }\n    }\n},\n{payload: \"fbl\"}\n]",
         "outputs": 2,
         "noerr": 0,
         "initialize": "",
@@ -3471,8 +4201,7 @@
         "y": 160,
         "wires": [
             [
-                "16b54642efdf96f9",
-                "d01236d41ec824e7"
+                "16b54642efdf96f9"
             ],
             [
                 "9dc7e1aeff5bc77d"
@@ -3489,40 +4218,7 @@
             "a12f7a3d.aa7d48"
         ],
         "x": 665,
-        "y": 140,
-        "wires": []
-    },
-    {
-        "id": "fd7901836f940a3a",
-        "type": "debug",
-        "z": "837c501a.a949b",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 1240,
-        "wires": []
-    },
-    {
-        "id": "d01236d41ec824e7",
-        "type": "debug",
-        "z": "837c501a.a949b",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 750,
-        "y": 80,
+        "y": 160,
         "wires": []
     },
     {
@@ -3535,7 +4231,7 @@
             "716941535fd2108f"
         ],
         "x": 665,
-        "y": 180,
+        "y": 200,
         "wires": []
     },
     {
@@ -3566,8 +4262,162 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 430,
-        "y": 340,
+        "x": 470,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "b8befe35578e1905",
+        "type": "function",
+        "z": "837c501a.a949b",
+        "name": "seesaw_simulation_custom",
+        "func": "let pi = 3.14\n//tempo de simulação\nlet tempo = msg.payload.parametros_simulacao.tempo\n\n//passo do rk4\nlet h = msg.payload.parametros_simulacao.passo\n\n\n//parametros\nlet g = 9.81 //m/s²\nlet m_m = 0.0025\nlet m_c = 0.0\nlet m_g = 0.03\nlet l = 0.535\nlet I_g = (m_g*Math.pow(l,2))/12\n\n//condições iniciais\nlet f = 0\nlet V = 0\n\nlet th = msg.payload.estados_iniciais.angulo\nlet z = msg.payload.estados_iniciais.velocidade_angular\nlet th_pp = msg.payload.estados_iniciais.aceleracao_angular\n\n//Valores desejados\nlet th_d = 0.0\nlet z_d = 0.0\nlet th_pp_d = 0.0\n\n//inicialização das variaveis\nlet t = 0.0\nlet th_f = 0.0\nlet z_f = 0.0\n\nlet th_k1 = 0.0\nlet th_k2 = 0.0\nlet th_k3 = 0.0\nlet th_k4 = 0.0\nlet z_k1 = 0.0\nlet z_k2 = 0.0\nlet z_k3 = 0.0\nlet z_k4 = 0.0\n\nlet T = []\nlet TH = []\nlet TH_p = []\nlet TH_pp = []\nlet TH_d = []\nlet TH_p_d = []\nlet TH_pp_d = []\nlet E = []\nlet E_p = []\nlet E_pp = []\nlet F = []\nlet Vo = []\n\nfunction f_th(th){\n\n  //simples\n  //r = (6*f + 6*g*(m_c - m_m)*cos(th))/(l*m_g)\n  //lagrange\n  r = 2*l*(f + g*m_c*Math.cos(th) - g*m_m*Math.cos(th))/(4*I_g + Math.pow(l,2)*m_c + Math.pow(l,2)*m_m)\n  //r = 2*(e3*l)*(f + g*m_c*Math.cos(th) - g*(e1*m_m)*Math.cos(th))/(4*(e2*I_g) + Math.pow((e2*l),2)*m_c + Math.pow((e2*l),2)*(e1*m_m))\n  \n  \n  return r\n}\n\nwhile (t < tempo){\n    \n    //definir esses valores dinamicamente depois\n    th_d = msg.payload.setpoint.angulo\n    z_d =  msg.payload.setpoint.velocidade_angular\n    th_pp_d =  msg.payload.setpoint.aceleracao_angular\n    \n    //th_d = Math.sin((pi/4.0)*(t))\n    //z_d = (pi*Math.cos((pi*t)/4.0))/4.0\n    //th_pp_d = -((pi**2)*Math.sin((pi*t)/4.0))/16.0\n    \n    if(msg.lei_de_controle == \"\"){\n        f = 0\n    }else{\n        f = eval(msg.payload.lei_de_controle)\n        //f = 0.1\n    }\n    \n    if (f>0){ \n      V = 23.3126202060078*Math.sqrt(Math.abs(f) + 0.0131289266304348) - 2.67119565217391\n    }\n    else{\n      V = -(23.3126202060078*Math.sqrt(Math.abs(f) + 0.0131289266304348) - 2.67119565217391)\n    }\n    \n    th_k1 = z\n    z_k1 = f_th(th)\n    //=======================\n    th_k2 = z + 0.5*h*z_k1\n    z_k2 = f_th(th+0.5*h*th_k1)\n    //=======================\n    th_k3 = z + 0.5*h*z_k2\n    z_k3 = f_th(th+0.5*h*th_k2)\n    //=======================    \n    th_k4 = z + h*z_k3\n    z_k4 = f_th(th+h*th_k3)\n    //=======================    \n    //=======================\n    th_f = th + (h/6)*(th_k1+2*th_k2+2*th_k3+th_k4) \n    z_f = z + (h/6)*(z_k1+2*z_k2+2*z_k3+z_k4)\n    th_pp = f_th(th)\n    //=======================\n       \n    \n\n    //T.push(t)\n\n    TH.push({\"x\": t*1000, \"y\": th})\n    TH_p.push({\"x\": t*1000, \"y\": z})\n    TH_pp.push({\"x\": t*1000, \"y\": th_pp})\n    TH_d.push({\"x\": t*1000, \"y\":th_d})\n    TH_p_d.push({\"x\": t*1000, \"y\":z_d})\n    TH_pp_d.push({\"x\": t*1000, \"y\":th_pp_d})\n    E.push({\"x\": t*1000, \"y\":th-th_d})\n    E_p.push({\"x\": t*1000, \"y\":z-z_d})\n    E_pp.push({\"x\": t*1000, \"y\":th_pp-th_pp_d})\n    F.push({\"x\": t*1000, \"y\": f})\n    Vo.push({\"x\": t*1000, \"y\": V})\n\n    th = th_f\n    z = z_f\n    t = t + h\n}\n\nlet output_data = {\n        \"angulo\": TH,\n        \"velocidade_angular\": TH_p,\n        \"aceleracao_angular\": TH_pp,\n        \"angulo_desejado\": TH_d,\n        \"velocidade_angular_desejada\": TH_p_d,\n        \"aceleracao_angular_desejada\": TH_pp_d,\n        \"forca_empuxo\": F,\n        \"tensao\": Vo,\n        \"erro\": E,\n        \"derivada_erro\": E_p,\n        \n    }\nglobal.set(\"output_data\",output_data)\n\n//graficos padrão\nreturn [{payload:\"angulo\"},\n        {payload:\"velocidade_angular\"},\n        {payload:\"forca_empuxo\"},\n        {payload:\"erro\"}\n\n];",
+        "outputs": 4,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 700,
+        "wires": [
+            [
+                "285bc912.bb2f86"
+            ],
+            [
+                "1fb1b0a9.8fb73f"
+            ],
+            [
+                "f9cedd6e.aa2f1"
+            ],
+            [
+                "d3aeb0f6.c96cb"
+            ]
+        ]
+    },
+    {
+        "id": "a8555a29c57aa18c",
+        "type": "subflow:2e07375f829b5889",
+        "z": "837c501a.a949b",
+        "name": "",
+        "x": 190,
+        "y": 700,
+        "wires": [
+            [
+                "977680268c952b22",
+                "b8befe35578e1905"
+            ]
+        ]
+    },
+    {
+        "id": "854d55e2595290ef",
+        "type": "inject",
+        "z": "837c501a.a949b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 880,
+        "wires": [
+            [
+                "cd2bba426c0f3fa3"
+            ]
+        ]
+    },
+    {
+        "id": "cd2bba426c0f3fa3",
+        "type": "function",
+        "z": "837c501a.a949b",
+        "name": "",
+        "func": "let a = 10\nlet b = 2\nlet r = a/b\nreturn {payload:eval(\"1\")};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 880,
+        "wires": [
+            [
+                "92e6061f8d2fef31"
+            ]
+        ]
+    },
+    {
+        "id": "92e6061f8d2fef31",
+        "type": "debug",
+        "z": "837c501a.a949b",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 650,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "8957e9f3fbbcd825",
+        "type": "link in",
+        "z": "837c501a.a949b",
+        "name": "num_graficos_std_out",
+        "links": [
+            "9b88e3dc468b9dbf"
+        ],
+        "x": 125,
+        "y": 1600,
+        "wires": [
+            [
+                "786f8a7e.adb5c4"
+            ]
+        ]
+    },
+    {
+        "id": "c2ad70e0be1248b0",
+        "type": "function",
+        "z": "837c501a.a949b",
+        "name": "set_number_of_graphs",
+        "func": "return {payload: 1};",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "9b88e3dc468b9dbf"
+            ]
+        ]
+    },
+    {
+        "id": "9b88e3dc468b9dbf",
+        "type": "link out",
+        "z": "837c501a.a949b",
+        "name": "num_graficos_std_in",
+        "mode": "link",
+        "links": [
+            "8957e9f3fbbcd825"
+        ],
+        "x": 665,
+        "y": 120,
         "wires": []
     },
     {
